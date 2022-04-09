@@ -1,11 +1,16 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+
+    background: linear-gradient(180deg, rgba(227,255,246,0) 82,08%, rgba(227, 255, 248, 0.38) 100%);
+
+    min-height: 100vh;
 }
 
 .page {
     width: 1000px;
-    margin: 65px auto 0px;
+    margin: 0 auto;
+    padding-top: 65px;
 }
 
 nav {
@@ -14,6 +19,11 @@ nav {
     align-items: center;
 
     margin-bottom: 55px;
+}
+
+a {
+    text-decoration: none;
+    color: #1F1534;
 }
 
 ul {
@@ -25,22 +35,28 @@ ul {
     padding: 0;
 }
 
-ul li a:hover {
-    font-weight: bold;
+ul li a {
+    opacity: 0.5px;
 }
 
-a {
-    text-decoration: none;
-    color: #1F1534;
+ul li a:hover {
+    font-weight: bold;
+    opacity: 1px;
 }
 
 h1, ul {
     font-family: 'Mulish', sans-serif;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 h1 {
-    font-size: 49px;
-    line-height: 56px;
+    font-size: 4.9rem;
+    line-height: 5.6rem;
     color: #1F1534;
 
     font-weight: normal;
@@ -54,21 +70,86 @@ h1 span {
 }
 
 section p {
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
     color: #7D7987;
+
+    margin: 40px 0;
 }
 
 button {
+    color: #FFFFFF;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
+    
+    background-color: #69B99D;
+    border: 0;
+    padding: 14px 32px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4EA788;
 }
 
 footer {
-    font-size: 14px;
-    line-height: 28px;
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+
+    margin-top: 80px;
+
+    text-align: center;
 }
 
 footer a {
     font-weight: bold;
+}
+
+#balls {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 600px) {
+
+    nav,
+    main,
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+
+    nav,
+    main,
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #balls {
+        visibility: hidden;
+    }
 }
